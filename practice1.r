@@ -1,4 +1,5 @@
-# 1st question
+#Bayesian inference in the binomial case 
+
 x=c(1,0,0,1,1,1)
 v=seq(0,1,0.01)
 dv=v[2]-v[1]
@@ -10,15 +11,15 @@ posterior = likely * prior / evidence
 plot(v,posterior,'l',col='red',xlab='θ',ylab='P')
 abline(prior,0,col='blue')
 
-# 2nd question
-t=2.3
+#Bayesian inference for the exponential distribution
 vt=seq(0,10,0.01)
 dvt=vt[2]-v[1]
 likelyt=rep(0,length(vt))
 priort=1/sqrt(vt)
 priort2=vt^3*exp(-vt)/6
 likelyt=vt*exp(-vt*t)
-#I have calculated the evidence from gamma function for first case. Numerically evaluate for the second.
+
+#I have calculated the evidence from gamma function for the exponential distribution. Numerically evaluate for the second.
 evidencet=sqrt(pi)/2
 evidencet2=sum(likelyt*priort2)*dvt
 posteriort= likelyt*priort/evidencet
@@ -27,7 +28,7 @@ plot(vt,posteriort,'l',col='red',xlab='θ',ylab='P')
 plot(vt,posteriort2,'l',col='red',xlab='θ',ylab='P')
 lines(vt,priort2,'l',col='blue')
 
-# 3rd question
+#Poisson distribution with an unusual prior
 x=c(1,2,2,2,3,3,3,5)
 v=seq(0,10,0.01)
 dv=v[2]-v[1]
